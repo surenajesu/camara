@@ -17,7 +17,8 @@
 <h1> Cámara La Entrada 2</h1>
 
 <div class="player-container"> <video id="video" controls="" muted="">
-<!-- Fuente del video, esta no se carga automáticamente --> <source src="http://190.93.126.194:8098/CAMARA_LA_ENTRADA_2/video.m3u8?token=c3z8GQ8mZhhKg0" type="application/x-mpegURL"> Tu navegador no puede reproducir este
+<!-- Fuente del video, esta no se carga automáticamente --> <source src="https://rtmp-live-ingest-us-east-1-universe-dacast-com.akamaized.net/transmuxv1/streams/7ed9a111-1110-47df-3bd8-85a9e0a15e3c.m3u8
+" type="application/x-mpegURL"> Tu navegador no puede reproducir este
 video. </source> <br>
 <!-- Botón para reproducir el video --> <button id="playButton">Reproducir
 Video</button> </video></div>
@@ -28,7 +29,8 @@ Video</button> </video></div>
     if (Hls.isSupported()) {
       var video = document.getElementById('video');
       var hls = new Hls();
-      hls.loadSource('http://190.93.126.194:8098/CAMARA_LA_ENTRADA_2/video.m3u8?token=c3z8GQ8mZhhKg0');
+      hls.loadSource('https://rtmp-live-ingest-us-east-1-universe-dacast-com.akamaized.net/transmuxv1/streams/7ed9a111-1110-47df-3bd8-85a9e0a15e3c.m3u8
+');
       hls.attachMedia(video);
       
       // Función para iniciar el video cuando el usuario presione el botón
