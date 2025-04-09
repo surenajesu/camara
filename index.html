@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  
+  <meta charset="UTF-8">
+  <title>Cámara La Entrada 2</title>
+
+  
+  
+  <style>
+    body { font-family: sans-serif; background: #f2f2f2; text-align: center; padding: 20px; }
+    .player-container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    video { width: 100%; border-radius: 10px; }
+    button { padding: 10px 20px; font-size: 16px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #555; }
+  </style>
+</head><body>
+<h1> Cámara La Entrada 2</h1>
+
+<div class="player-container"> <video id="video" controls="" muted="">
+<!-- Fuente del video, esta no se carga automáticamente --> <source src="http://190.93.126.194:8098/CAMARA_LA_ENTRADA_2/video.m3u8?token=c3z8GQ8mZhhKg0" type="application/x-mpegURL"> Tu navegador no puede reproducir este
+video. </source> <br>
+<!-- Botón para reproducir el video --> <button id="playButton">Reproducir
+Video</button> </video></div>
+
+<!-- hls.js -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script>
+    if (Hls.isSupported()) {
+      var video = document.getElementById('video');
+      var hls = new Hls();
+      hls.loadSource('http://190.93.126.194:8098/CAMARA_LA_ENTRADA_2/video.m3u8?token=c3z8GQ8mZhhKg0');
+      hls.attachMedia(video);
+      
+      // Función para iniciar el video cuando el usuario presione el botón
+      document.getElementById("playButton").addEventListener("click", function() {
+        video.play();
+      });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = 'http://190.93.126.194:8098/CAMARA_LA_ENTRADA_2/video.m3u8?token=c3z8GQ8mZhhKg0';
+      
+      // Función para iniciar el video cuando el usuario presione el botón
+      document.getElementById("playButton").addEventListener("click", function() {
+        video.play();
+      });
+    }
+  </script>
+</body></html>
